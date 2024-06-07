@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            padding: 0 1rem;
+            text-decoration: none;
+        }
+        .main {
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="http://localhost:8080/">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="main">
+        <h1>Welcome to the Home Page</h1>
+        <h2>Number of users:<%=count%></h2>
+
+        <button><a href="">JOIN US TODAY!!</a> </button>
+       <button> <a href="http://localhost:8080/user">USERS DATA</a></button>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Your Company
+    </div>
+
+   
+
+</body>
+</html>

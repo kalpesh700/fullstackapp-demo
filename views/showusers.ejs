@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            padding: 0 1rem;
+            text-decoration: none;
+        }
+        .main {
+            padding: 2rem;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="http://localhost:8080/">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="http://localhost:8080/user/post">Create User</a>
+    </div>
+
+    <div class="main">
+        <h1>User Details</h1>
+        <form action="">
+            <table>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Button</th>
+                </tr>
+                <% let serialNumber = 1; %>
+                <% for(user of users) {%>
+                <tr>
+                    <td><%= serialNumber++ %></td>
+                    <td><%= user.id %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.username %></td>
+                    <td>
+                        <form method="get" action="/user/<%=user.id%>/edit">
+                            <button>Edit details</button>
+                            
+                        </form>
+                        
+                        <form method="get" action="/user/<%=user.id%>/delete">
+                            <button>Delete user</button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+        </form>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Your Company
+    </div>
+
+</body>
+</html>
+ 
